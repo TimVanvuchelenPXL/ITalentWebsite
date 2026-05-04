@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn ITalent Portfolio - Home Run Editie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basis Variabelen & Reset */
+        :root {
+            --grass-green: #2e8b57;
+            --dirt-brown: #d2b48c;
+            --baseball-white: #fdfdfd;
+            --stitch-red: #cc0000;
+            --text-dark: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--grass-green);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            cursor: crosshair;
+            /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size:24px"><text y="22">⚾</text></svg>'), auto;; Sporty cursor */
+        }
+        h1, h2, h3 { font-family: 'Bebas Neue', cursive; letter-spacing: 2px; }
+
+        /* Navigatie */
+        nav {
+            background-color: var(--dirt-brown);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px dashed var(--stitch-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav h1 { color: #fff; text-shadow: 2px 2px 0px #000; font-size: 2rem;}
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover { color: var(--stitch-red); }
+
+        /* Hero Sectie */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle, var(--dirt-brown) 30%, var(--grass-green) 100%);
+            color: white;
+            border-bottom: 10px solid white;
+        }
+        .hero h2 { font-size: 4rem; text-shadow: 3px 3px 0px var(--stitch-red); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px; }
+
+        /* Sectie Standaard */
+        .section-container { max-width: 1200px; margin: 40px auto; padding: 20px; }
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Seminaries (Trading Cards) */
+        .grid-8 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card {
+            background-color: transparent;
+            width: 100%;
+            height: 300px;
+            perspective: 1000px;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        .card:hover .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border: 3px dashed var(--stitch-red);
+            border-radius: 10px;
+        }
+        .card-front {
+            background-color: var(--baseball-white);
+            color: var(--text-dark);
+        }
+        .card-front h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--dirt-brown); }
+        .card-front span { font-size: 4rem; }
+        .card-back {
+            background-color: var(--dirt-brown);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .card-back p { font-size: 1rem; line-height: 1.4; }
+
+        /* Speciale Activiteiten */
+        .activities-container { display: flex; flex-direction: column; gap: 40px; }
+        .activity-row {
+            display: flex;
+            background: var(--baseball-white);
+            border: 4px solid var(--dirt-brown);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+        .activity-row:nth-child(even) { flex-direction: row-reverse; } /* Wissel afbeelding links/rechts */
+        .activity-img { flex: 1; background-color: #ddd; min-height: 250px; position: relative; }
+        .activity-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
+        .activity-text { flex: 1; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+        .activity-text h3 { font-size: 2.2rem; color: var(--stitch-red); margin-bottom: 10px; }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 4px dashed white;
+            position: relative;
+        }
+        #easter-egg-btn {
+            background: none; border: none; font-size: 1.5rem; cursor: pointer;
+            position: absolute; right: 20px; bottom: 20px; opacity: 0.3; transition: opacity 0.3s;
+        }
+        #easter-egg-btn:hover { opacity: 1; }
+
+        /* Home Run Animatie (Konami Code) */
+        #homerun-ball {
+            position: fixed;
+            bottom: -50px;
+            left: -50px;
+            font-size: 5rem;
+            display: none;
+            z-index: 9999;
+        }
+        /* a, button {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size:24px"><text y="22">🏏</text></svg>'), pointer;
+        } */
+        @keyframes flyOver {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            50% { transform: translate(50vw, -80vh) rotate(360deg) scale(2); }
+            100% { transform: translate(110vw, 20vh) rotate(720deg) scale(0.5); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .activity-row, .activity-row:nth-child(even) { flex-direction: column; }
+            .activity-img { min-height: 200px; }
+            nav { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>⚾ ITalent Portfolio</h1>
+        <ul>
+            <li><a href="#home">Home Plate</a></li>
+            <li><a href="#seminaries">Innings (Seminaries)</a></li>
+            <li><a href="#activiteiten">All-Stars (Activiteiten)</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h2>Welkom in de Major League van IT</h2>
+        <p>Dit is mijn ITalent portfolio. Hier verzamel ik mijn 'batting average' doorheen het jaar: de seminaries die ik heb bijgewoond en de speciale activiteiten waarin ik een Home Run heb geslagen.</p>
+    </section>
+
+    <section id="seminaries" class="section-container">
+        <h2 class="section-title">De 8 Innings (Seminaries)</h2>
+        <div class="grid-8">
+            <script>
+                const seminaries = [
+                    { titel: "Seminaries 1: AI Tools", emoji: "🤖", text: "Ontdekt hoe AI de workflow van developers kan versnellen. Een boeiende blik op de toekomst van coderen." },
+                    { titel: "Seminaries 2: Cyber Security", emoji: "🛡️", text: "Geleerd over de nieuwste phishing technieken en hoe we systemen beter kunnen beveiligen. Zeer praktische inzichten opgedaan." },
+                    { titel: "Seminaries 3: Cloud Hosting", emoji: "☁️", text: "Een diepe duik in AWS en Azure architecturen. Ik weet nu hoe ik een schaalbare webapplicatie moet opzetten." },
+                    { titel: "Seminaries 4: Scrum & Agile", emoji: "🏃", text: "Hoe werk je efficiënt in een team? Tijdens dit seminarie oefenden we met sprints en het plannen van taken." },
+                    { titel: "Seminaries 5: UI/UX Design", emoji: "🎨", text: "Focus op de eindgebruiker: waarom simpele designs vaak het beste werken. Inclusief een workshop over Figma." },
+                    { titel: "Seminaries 6: Green IT", emoji: "🌱", text: "Hoe kunnen we de ecologische voetafdruk van datacenters verkleinen? Een eye-opener over duurzaamheid in de tech-sector." },
+                    { titel: "Seminaries 7: Data Analytics", emoji: "📊", text: "Data is het nieuwe goud. We leerden hoe we ruwe data kunnen omzetten in visuele, bruikbare rapporten." },
+                    { titel: "Seminaries 8: Sollicitatietraining", emoji: "💼", text: "Tips & tricks voor het perfecte IT-CV en het voeren van een sterk sollicitatiegesprek. Helemaal klaar voor de arbeidsmarkt!" }
+                ];
+
+                seminaries.forEach(sem => {
+                    document.write(`
+                        <div class="card">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <span>${sem.emoji}</span>
+                                    <h3>${sem.titel}</h3>
+                                    <p>Hover om te flippen 🔄</p>
+                                </div>
+                                <div class="card-back">
+                                    <h3>${sem.titel}</h3>
+                                    <p>${sem.text}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </section>
+
+    <section id="activiteiten" class="section-container">
+        <h2 class="section-title">All-Star Games (Activiteiten)</h2>
+        <div class="activities-container">
+            
+            <div class="activity-row">
+                <div class="activity-img">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hackathon">
+                </div>
+                <div class="activity-text">
+                    <h3>1. De 24-uurs Hackathon</h3>
+                    <p>Samen met een team van 4 studenten hebben we 24 uur lang gecodeerd om een prototype te bouwen voor een lokale non-profit. Het was een uitputtingsslag, maar we hebben een fantastische webapplicatie neergezet en de 'Best Teamwork' award gewonnen!</p>
+                </div>
+            </div>
+
+            <div class="activity-row">
+                <div class="activity-img">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bedrijfsbezoek">
+                </div>
+                <div class="activity-text">
+                    <h3>2. Bedrijfsbezoek TechCorp</h3>
+                    <p>Een exclusief kijkje achter de schermen bij een van de grootste IT-bedrijven van het land. We kregen een rondleiding door hun serverruimtes en konden netwerken met hun senior developers. Een enorme bron van inspiratie voor mijn toekomstige carrière.</p>
+                </div>
+            </div>
+
+            <div class="activity-row">
+                <div class="activity-img">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Certificaat">
+                </div>
+                <div class="activity-text">
+                    <h3>3. Behalen Extra Certificaat</h3>
+                    <p>Naast het vaste curriculum heb ik in mijn vrije tijd gestudeerd voor het officiële basiscertificaat van Python programmeren. Dit toont mijn inzet en passie voor het vakgebied, en geeft me een mooie voorsprong op de arbeidsmarkt.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mijn ITalent Portfolio | Gemaakt met passie voor de sport en IT.</p>
+        <button id="easter-egg-btn" title="Niet op klikken...">⚾</button>
+    </footer>
+
+    <div id="homerun-ball">⚾</div>
+
+    <script>
+        // --- EASTER EGG 1: 3x klikken op de bal in de footer ---
+        let clickCount = 0;
+        document.getElementById('easter-egg-btn').addEventListener('click', function() {
+            clickCount++;
+            if(clickCount === 1) {
+                alert("Strike One!");
+            } else if (clickCount === 2) {
+                alert("Strike Two!");
+            } else if (clickCount === 3) {
+                alert("STRIKE THREE! YOU'RE OUT! 🧢\n(Grapje, je mag gewoon blijven kijken)");
+                clickCount = 0; // reset
+            }
+        });
+
+        // --- EASTER EGG 2: KONAMI CODE ---
+        // Code: Up, Up, Down, Down, Left, Right, Left, Right, B, A
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiPosition = 0;
+
+        document.addEventListener('keydown', function(e) {
+            // Check of de toets overeenkomt met de huidige positie in de code
+            if (e.key === konamiCode[konamiPosition] || e.key.toLowerCase() === konamiCode[konamiPosition]) {
+                konamiPosition++;
+                // Als de hele code is ingevoerd
+                if (konamiPosition === konamiCode.length) {
+                    triggerHomeRun();
+                    konamiPosition = 0; // reset
+                }
+            } else {
+                // Foute toets, begin opnieuw
+                konamiPosition = 0;
+            }
+        });
+
+        function triggerHomeRun() {
+            alert("🏟️ IT'S OUTTA HERE! GRAND SLAM! 🏟️\nJe hebt de geheime Konami Code gevonden!");
+            const ball = document.getElementById('homerun-ball');
+            ball.style.display = 'block';
+            ball.style.animation = 'flyOver 3s ease-in-out forwards';
+            
+            // Verberg de bal weer na de animatie
+            setTimeout(() => {
+                ball.style.display = 'none';
+                ball.style.animation = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
