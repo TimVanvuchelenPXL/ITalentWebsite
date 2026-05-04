@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Camp - Personal Development</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --grass-green: #2e8b57;
+    --dirt-brown: #d2b48c;
+    --baseball-white: #fdfdfd;
+    --stitch-red: #cc0000;
+    --text-dark: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1f5f3a, #2e8b57);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* NAV (consistent met rest van site) */
+nav {
+    background: var(--dirt-brown);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px dashed var(--stitch-red);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+.header h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    text-shadow: 3px 3px 0 var(--stitch-red);
+}
+
+.header p {
+    opacity: 0.9;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* CARDS */
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.activity {
+    background: var(--baseball-white);
+    border: 3px solid var(--dirt-brown);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.activity:hover {
+    transform: translateY(-5px);
+}
+
+.activity-text h2 {
+    color: var(--stitch-red);
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--dirt-brown);
+    color: white;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="index.html">⚾ Back to stadium</a>
+    <span style="color:white;font-weight:bold;">🏋️ Training Camp</span>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>TRAINING CAMP</h1>
+    <p>Persoonlijke ontwikkeling, reflectie en groei als IT-student</p>
+</div>
+
+<div class="container">
+
+    <div class="activity-container">
+
+        <!-- 1 -->
+        <div class="activity">
+            <div class="activity-text">
+                <h2>⚾ Projectweek 2TIN</h2>
+
+                <p>
+                    Tijdens de projectweek werkte ik in team aan een realistische IT-case.
+                    Focus op samenwerking, planning en het toepassen van technische skills in een groter project.
+                </p>
+
+                <div>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Planning</span>
+                    <span class="tag">Development</span>
+                </div>
+
+                <p style="margin-top:10px;">
+                    📍 PXL / externe opdracht<br>
+                    ⏱ 1 week
+                </p>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="activity">
+            <div class="activity-text">
+                <h2>🧠 POPping Sessie</h2>
+
+                <p>
+                    Reflectiesessie rond studiehouding, motivatie en persoonlijke groei.
+                    Inzicht gekregen in sterke punten en werkpunten als student IT.
+                </p>
+
+                <div>
+                    <span class="tag">Reflectie</span>
+                    <span class="tag">Self-growth</span>
+                </div>
+
+                <p style="margin-top:10px;">
+                    📍 PXL Hasselt<br>
+                    ⏱ 2 uur
+                </p>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="activity">
+            <div class="activity-text">
+                <h2>📅 Exam Planning Workshop</h2>
+
+                <p>
+                    Online workshop rond studeerplanning en efficiënt leren.
+                    Technieken geleerd om beter te plannen en stress te verminderen.
+                </p>
+
+                <div>
+                    <span class="tag">Planning</span>
+                    <span class="tag">Productivity</span>
+                </div>
+
+                <p style="margin-top:10px;">
+                    🌐 Online<br>
+                    ⏱ 2 uur
+                </p>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="activity">
+            <div class="activity-text">
+                <h2>🤝 My Team and I</h2>
+
+                <p>
+                    Teamwork sessie op Corda Campus rond communicatie en samenwerking.
+                    Focus op groepsdynamiek en efficiënter samenwerken.
+                </p>
+
+                <div>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Communication</span>
+                </div>
+
+                <p style="margin-top:10px;">
+                    📍 Corda Campus<br>
+                    ⏱ 2 uur
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p><a href="index.html">← Back to Stadium</a></p>
+</footer>
+
+</body>
+</html>

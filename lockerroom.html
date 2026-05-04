@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleedkamer - Player Profile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --grass-green: #2e8b57;
+            --dirt-brown: #d2b48c;
+            --baseball-white: #fdfdfd;
+            --stitch-red: #cc0000;
+            --text-dark: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1f5f3a, #2e8b57);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+        }
+
+        /* NAV */
+        nav {
+            background: var(--dirt-brown);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px dashed var(--stitch-red);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            text-shadow: 3px 3px 0px var(--stitch-red);
+        }
+
+        .header p {
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* LOCKER ROOM */
+        .locker-room {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        /* PLAYER CARD */
+        .player-card {
+            background: var(--baseball-white);
+            border: 4px solid var(--dirt-brown);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .player-card h2 {
+            color: var(--stitch-red);
+            font-size: 2rem;
+        }
+
+        .badge {
+            font-size: 4rem;
+        }
+
+        .stats {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .bar {
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 5px 0;
+        }
+
+        .fill {
+            height: 10px;
+            background: var(--stitch-red);
+        }
+
+        /* STORY CARDS */
+        .story {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-left: 6px solid var(--stitch-red);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--dirt-brown);
+            margin-bottom: 10px;
+        }
+
+        /* ANIMATION */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .locker-room {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* BACK BUTTON */
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--stitch-red);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        /* FOOTER BACK LINK */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+        
+        footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">⚾ Back to Stadium</a>
+    <span style="color:white;font-weight:bold;">Kleedkamer</span>
+</nav>
+
+<div class="header">
+    <h1>PLAYER PROFILE</h1>
+    <p>Welkom in de kleedkamer — hier zit de echte speler achter het portfolio</p>
+</div>
+
+<div class="locker-room">
+
+    <!-- LEFT: PLAYER CARD -->
+    <div class="player-card">
+        <div class="badge">⚾</div>
+        <h2>Tim Vanvuchelen</h2>
+        <p>AI Player • 3AINA • 20y</p>
+
+        <div class="stats">
+            <p>🤝 Sociale skills</p>
+            <div class="bar"><div class="fill" style="width: 90%"></div></div>
+
+            <p>🧠 Theorie kennis</p>
+            <div class="bar"><div class="fill" style="width: 85%"></div></div>
+
+            <p>💻 Praktische skills</p>
+            <div class="bar"><div class="fill" style="width: 65%"></div></div>
+
+            <p>🏃 Sportiviteit</p>
+            <div class="bar"><div class="fill" style="width: 95%"></div></div>
+        </div>
+    </div>
+
+    <!-- RIGHT: STORY -->
+    <div class="story">
+
+        <div class="card">
+            <h3>👤 Voorstelling</h3>
+            <p>
+                Mijn naam is Tim Vanvuchelen, ik ben 20 jaar oud, afkomstig uit Hasselt en student Toegepaste Informatica – Artificiële Intelligentie in 3AINA.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚾ Sterktes</h3>
+            <p>
+                Ik ben sterk in sociale contacten leggen, nieuwe mensen leren kennen en sport speelt een grote rol in mijn leven.
+                Theorie leer ik snel, al is het toepassen soms uitdagender.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Ambities</h3>
+            <p>
+                Binnen 3 tot 5 jaar wil ik werkervaring combineren met eventueel een extra diploma en sport op hoog niveau blijven beoefenen.
+                Een goed leven opbouwen is belangrijk, maar niet alleen financieel.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎯 Doelen</h3>
+            <p>
+                Ik wil later lesgeven omdat ik geloof dat een goede leerkracht een enorm verschil kan maken.
+                Daarnaast wil ik leren koken om zelfstandiger te worden in het dagelijks leven.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Groei</h3>
+            <p>
+                Ik wil mijn praktische skills verbeteren en leren om theorie beter toe te passen in echte projecten.
+                Ook teamwork en communicatie blijven belangrijk in mijn ontwikkeling.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+<footer>
+    <p><a href="index.html">← Back to Stadium</a></p>
+</footer>
+</html>

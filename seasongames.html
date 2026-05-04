@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Season Games - Scouting Logbook</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --grass-green: #2e8b57;
+    --dirt-brown: #d2b48c;
+    --baseball-white: #fdfdfd;
+    --stitch-red: #cc0000;
+    --text-dark: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1f5f3a, #2e8b57);
+    color: var(--text-dark);
+}
+
+/* NAV */
+nav {
+    background: var(--dirt-brown);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px dashed var(--stitch-red);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 60px 20px 20px;
+    color: white;
+}
+
+.header h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    text-shadow: 3px 3px 0 var(--stitch-red);
+}
+
+.header p {
+    opacity: 0.9;
+}
+
+/* OVERVIEW SCOREBOARD */
+.overview {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 0 30px 20px;
+}
+
+.stat {
+    background: var(--baseball-white);
+    border: 3px solid var(--dirt-brown);
+    border-radius: 12px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+}
+
+.stat h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--stitch-red);
+}
+
+.stat p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* CARDS (Training Camp style) */
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.activity {
+    background: var(--baseball-white);
+    border: 3px solid var(--dirt-brown);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.activity:hover {
+    transform: translateY(-5px);
+}
+
+.activity-text h2 {
+    color: var(--stitch-red);
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.activity p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* TAGS */
+.tag {
+    display: inline-block;
+    background: var(--dirt-brown);
+    color: white;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="index.html">⚾ Back to stadium</a>
+    <span style="color:white;font-weight:bold;">⚾ Season Games</span>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>SEASON GAMES</h1>
+    <p>Scouting logbook van seminaries & IT-sessies</p>
+</div>
+
+<!-- SCOREBOARD OVERVIEW -->
+<div class="overview">
+
+    <div class="stat">
+        <h3>9</h3>
+        <p>Games Played</p>
+    </div>
+
+    <div class="stat">
+        <h3>27h</h3>
+        <p>Total Time</p>
+    </div>
+
+    <div class="stat">
+        <h3>8</h3>
+        <p>Locations</p>
+    </div>
+
+    <div class="stat">
+        <h3>AI</h3>
+        <p>Main Focus</p>
+    </div>
+
+</div>
+
+<div class="container">
+
+<div class="activity-container">
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>🤖 Uncanny: LLM & Diffusion Models</h2>
+            <p>📍 Corda Campus • 📅 11/03/2025 • ⏱ 3h</p>
+            <p>Intro tot Large Language Models en generatieve AI zoals Stable Diffusion en ComfyUI.</p>
+            <div>
+                <span class="tag">AI</span>
+                <span class="tag">Generative Models</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>🚓 Politie: Digital Forensics</h2>
+            <p>📍 Corda Campus • 📅 01/04/2025 • ⏱ 3h</p>
+            <p>Gastsprekers gaven uitleg over cybercrime, crypto-assets en digitaal onderzoek.</p>
+            <div>
+                <span class="tag">Cybersecurity</span>
+                <span class="tag">Forensics</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>⚛️ ACA Group: React</h2>
+            <p>📍 Corda Campus • 📅 29/04/2025 • ⏱ 3h</p>
+            <p>Intro tot React en component-based frontend development.</p>
+            <div>
+                <span class="tag">Frontend</span>
+                <span class="tag">React</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>🎵 Sopra Steria: AI & Music</h2>
+            <p>📍 Corda Campus • 📅 06/05/2025 • ⏱ 3h</p>
+            <p>Generatieve AI toegepast op muziekproductie en creatieve workflows.</p>
+            <div>
+                <span class="tag">AI</span>
+                <span class="tag">Creativity</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>🧠 Jackie Janssen – AI in de wereld</h2>
+            <p>📍 PXL Hasselt • 📅 14/10/2025 • ⏱ 3h</p>
+            <p>AI in de echte wereld en impact buiten de IT-sector.</p>
+            <div>
+                <span class="tag">AI</span>
+                <span class="tag">Society</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>⚛️ IBM: Quantum Machine Learning</h2>
+            <p>📍 Corda Campus • 📅 05/11/2025 • ⏱ 3h</p>
+            <p>Intro tot quantum computing en machine learning toepassingen.</p>
+            <div>
+                <span class="tag">Quantum</span>
+                <span class="tag">ML</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>💼 Sarah Swaenepoel – Bijberoep</h2>
+            <p>📍 PXL Hasselt • 📅 24/11/2025 • ⏱ 3h</p>
+            <p>Hoe je een bijberoep start en financiële kansen benut als student.</p>
+            <div>
+                <span class="tag">Entrepreneurship</span>
+                <span class="tag">Finance</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>📊 Easi: Microsoft Fabric</h2>
+            <p>📍 Corda Campus • 📅 03/12/2025 • ⏱ 3h</p>
+            <p>Datawarehousing en analytics binnen Microsoft Fabric ecosystemen.</p>
+            <div>
+                <span class="tag">Data</span>
+                <span class="tag">Cloud</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity">
+        <div class="activity-text">
+            <h2>🎤 Lieven Scheire – AI Show</h2>
+            <p>📍 Trixxo Arena • 📅 08/11/2024 • ⏱ 2h</p>
+            <p>Toegankelijke en humoristische uitleg over artificiële intelligentie.</p>
+            <div>
+                <span class="tag">AI</span>
+                <span class="tag">Show</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<footer>
+    <p><a href="index.html">← Back to Stadium</a></p>
+</footer>
+
+</body>
+</html>
