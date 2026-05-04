@@ -57,11 +57,7 @@ nav a {
     text-shadow: 3px 3px 0 var(--stitch-red);
 }
 
-.header p {
-    opacity: 0.9;
-}
-
-/* OVERVIEW SCOREBOARD */
+/* OVERVIEW */
 .overview {
     max-width: 1100px;
     margin: auto;
@@ -77,18 +73,12 @@ nav a {
     border-radius: 12px;
     text-align: center;
     padding: 15px;
-    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
 }
 
 .stat h3 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue';
     font-size: 2rem;
     color: var(--stitch-red);
-}
-
-.stat p {
-    font-size: 0.85rem;
-    opacity: 0.7;
 }
 
 /* CONTAINER */
@@ -98,7 +88,6 @@ nav a {
     padding: 30px;
 }
 
-/* CARDS (Training Camp style) */
 .activity-container {
     display: flex;
     flex-direction: column;
@@ -121,8 +110,7 @@ nav a {
 .activity-text h2 {
     color: var(--stitch-red);
     margin-bottom: 10px;
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: 1px;
+    font-family: 'Bebas Neue';
 }
 
 .activity p {
@@ -141,6 +129,45 @@ nav a {
     font-size: 0.8rem;
 }
 
+/* IMAGE GALLERY */
+.image-gallery {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.image-gallery img {
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    border: 2px solid var(--dirt-brown);
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -150,7 +177,6 @@ footer {
 
 footer a {
     color: white;
-    font-weight: bold;
     text-decoration: none;
 }
 
@@ -159,54 +185,42 @@ footer a {
     .overview {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    .image-gallery img {
+        width: 100%;
+        height: auto;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <a href="index.html">⚾ Back to stadium</a>
     <span style="color:white;font-weight:bold;">⚾ Season Games</span>
 </nav>
 
-<!-- HEADER -->
 <div class="header">
     <h1>SEASON GAMES</h1>
     <p>Scouting logbook van seminaries & IT-sessies</p>
 </div>
 
-<!-- SCOREBOARD OVERVIEW -->
 <div class="overview">
-
-    <div class="stat">
-        <h3>9</h3>
-        <p>Games Played</p>
-    </div>
-
-    <div class="stat">
-        <h3>27h</h3>
-        <p>Total Time</p>
-    </div>
-
-    <div class="stat">
-        <h3>8</h3>
-        <p>Locations</p>
-    </div>
-
-    <div class="stat">
-        <h3>AI</h3>
-        <p>Main Focus</p>
-    </div>
-
+    <div class="stat"><h3>9</h3><p>Games Played</p></div>
+    <div class="stat"><h3>27h</h3><p>Total Time</p></div>
+    <div class="stat"><h3>8</h3><p>Locations</p></div>
+    <div class="stat"><h3>AI</h3><p>Main Focus</p></div>
 </div>
 
 <div class="container">
-
 <div class="activity-container">
 
-    <div class="activity">
+<div class="activity">
         <div class="activity-text">
             <h2>🤖 Uncanny: LLM & Diffusion Models</h2>
             <p>📍 Corda Campus • 📅 11/03/2025 • ⏱ 3h</p>
@@ -302,25 +316,49 @@ footer a {
         </div>
     </div>
 
-    <div class="activity">
-        <div class="activity-text">
-            <h2>🎤 Lieven Scheire – AI Show</h2>
-            <p>📍 Trixxo Arena • 📅 08/11/2024 • ⏱ 2h</p>
-            <p>Toegankelijke en humoristische uitleg over artificiële intelligentie.</p>
-            <div>
-                <span class="tag">AI</span>
-                <span class="tag">Show</span>
-            </div>
+<div class="activity">
+    <div class="activity-text">
+        <h2>🎤 Lieven Scheire – AI Show</h2>
+        <p>📍 Trixxo Arena • 📅 08/11/2024 • ⏱ 2h</p>
+        <p>
+            Toegankelijke en humoristische uitleg over artificiële intelligentie.
+            Lieven bracht complexe AI-concepten op een luchtige en begrijpbare manier.
+        </p>
+
+        <div>
+            <span class="tag">AI</span>
+            <span class="tag">Show</span>
+        </div>
+
+        <div class="image-gallery">
+            <img src="images/hack4.jpeg" onclick="openLightbox(this.src)">
+            <img src="images/hack5.jpeg" onclick="openLightbox(this.src)">
         </div>
     </div>
-
 </div>
 
+</div>
 </div>
 
 <footer>
     <p><a href="index.html">← Back to Stadium</a></p>
 </footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
