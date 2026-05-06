@@ -26,6 +26,21 @@ body {
     background: linear-gradient(135deg, #1b5e3a, #2e8b57);
 }
 
+nav {
+    background: var(--dirt-brown);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px dashed var(--stitch-red);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
 /* HEADER */
 header {
     text-align: center;
@@ -162,10 +177,27 @@ header h1 {
     max-height: 90%;
     border-radius: 10px;
 }
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
 </style>
 </head>
 
 <body>
+
+<nav>
+    <a href="index.html">⚾ Back to stadium</a>
+    <span style="color:white;font-weight:bold;">Innovation Report</span>
+</nav>
 
 <header>
     <h1>⚾ I-Talent Reflecties</h1>
@@ -361,6 +393,10 @@ header h1 {
     </div>
 
 </div>
+
+<footer>
+    <p><a href="index.html">← Back to Stadium</a></p>
+</footer>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeImg()">

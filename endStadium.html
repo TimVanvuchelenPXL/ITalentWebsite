@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End of Season - Final Reflection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --grass-green: #2e8b57;
+    --dirt-brown: #d2b48c;
+    --baseball-white: #fdfdfd;
+    --stitch-red: #cc0000;
+    --text-dark: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1b5e3a, #2e8b57);
+    color: white;
+}
+
+/* NAV */
+nav {
+    background: var(--dirt-brown);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px dashed var(--stitch-red);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    text-shadow: 3px 3px 0 var(--stitch-red);
+}
+
+.hero p {
+    opacity: 0.9;
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.stat {
+    background: var(--baseball-white);
+    color: var(--text-dark);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 3px solid var(--dirt-brown);
+}
+
+.stat h2 {
+    color: var(--stitch-red);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+}
+
+/* MAIN CARD */
+.card {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: var(--baseball-white);
+    color: var(--text-dark);
+    padding: 30px;
+    border-radius: 12px;
+    border: 3px solid var(--dirt-brown);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--stitch-red);
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* X-FACTOR GRID */
+.xfactor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.xbox {
+    background: rgba(46,139,87,0.1);
+    border: 2px solid var(--grass-green);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* FINAL MESSAGE */
+.final {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">← Back to Stadium</a>
+    <span>⚾ End of Season Report</span>
+</nav>
+
+<div class="hero">
+    <h1>FINAL INNING</h1>
+    <p>Eindreflectie van mijn I-Talent journey</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stat">
+        <h2>Growth</h2>
+        <p>Persoonlijke ontwikkeling</p>
+    </div>
+
+    <div class="stat">
+        <h2>Teamwork</h2>
+        <p>Sterk verbeterd</p>
+    </div>
+
+    <div class="stat">
+        <h2>XP</h2>
+        <p>Praktische ervaring</p>
+    </div>
+
+    <div class="stat">
+        <h2>X-FACTOR</h2>
+        <p>In ontwikkeling</p>
+    </div>
+</div>
+
+<!-- REFLECTIE -->
+<div class="card">
+    <h2>🧭 Eindreflectie</h2>
+
+    <p>
+        Doorheen mijn I-Talent traject heb ik mezelf beter leren kennen, zowel op professioneel als persoonlijk vlak.
+        Mijn sterktes zoals sociale vaardigheden en motivatie om bij te leren zijn verder ontwikkeld en concreter geworden.
+    </p>
+
+    <p>
+        Ik ben vooral gegroeid in samenwerken en het toepassen van kennis in praktijk. Activiteiten zoals de hackathon
+        en de studiereis naar Duitsland hebben mij geleerd om onder druk te werken, flexibel te zijn en breder te kijken
+        naar IT in een internationale context.
+    </p>
+
+    <p>
+        Mijn sterktes liggen vooral in communicatie, teamwork en leergierigheid. Tegelijk blijf ik werken aan het beter
+        toepassen van theorie in praktijk.
+    </p>
+
+    <h2>⚾ X-Factor</h2>
+
+    <div class="xfactor">
+        <div class="xbox">
+            <strong>Passie</strong>
+            <p>Interesse in technologie en blijven bijleren</p>
+        </div>
+
+        <div class="xbox">
+            <strong>Ondernemend</strong>
+            <p>Initiatief genomen tijdens hackathon en projecten</p>
+        </div>
+
+        <div class="xbox">
+            <strong>Teamplayer</strong>
+            <p>Sterk in samenwerking en communicatie</p>
+        </div>
+
+        <div class="xbox">
+            <strong>Internationaal</strong>
+            <p>Blik verruimd door Duitslandreis</p>
+        </div>
+    </div>
+
+    <p style="margin-top:20px;">
+        De X-factor is voor mij geen eindpunt, maar een continu groeiproces waarin ik mezelf blijf ontwikkelen en verbeteren.
+    </p>
+</div>
+
+<div class="final">
+    <p>⚾ “End of season, but not end of growth”</p>
+</div>
+
+<footer>
+    ⚾ ITalent Portfolio - Final Reflection Page
+</footer>
+
+</body>
+</html>
