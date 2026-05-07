@@ -34,6 +34,7 @@ nav {
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 4px dashed var(--stitch-red);
 }
 
@@ -57,6 +58,7 @@ nav a {
 
 .hero p {
     opacity: 0.9;
+    margin-top: 10px;
 }
 
 /* STATS */
@@ -76,6 +78,7 @@ nav a {
     border-radius: 12px;
     text-align: center;
     border: 3px solid var(--dirt-brown);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .stat h2 {
@@ -86,25 +89,55 @@ nav a {
 
 /* MAIN CARD */
 .card {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 30px auto;
     background: var(--baseball-white);
     color: var(--text-dark);
-    padding: 30px;
-    border-radius: 12px;
-    border: 3px solid var(--dirt-brown);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    border-radius: 14px;
+    border: 4px solid var(--dirt-brown);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 
-.card h2 {
+/* CARD HEADER */
+.card-header {
+    background: var(--dirt-brown);
+    color: white;
+    padding: 20px 30px;
+    border-bottom: 3px dashed var(--stitch-red);
+}
+
+.card-header h2 {
     font-family: 'Bebas Neue', cursive;
-    color: var(--stitch-red);
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
 }
 
-.card p {
-    line-height: 1.6;
-    margin-bottom: 15px;
+/* SCROLLABLE CONTENT */
+.card-content {
+    padding: 30px;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+/* CUSTOM SCROLLBAR */
+.card-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+    background: var(--dirt-brown);
+    border-radius: 10px;
+}
+
+.card-content::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+.card-content p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
 }
 
 /* X-FACTOR GRID */
@@ -112,46 +145,72 @@ nav a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .xbox {
     background: rgba(46,139,87,0.1);
     border: 2px solid var(--grass-green);
-    padding: 15px;
-    border-radius: 10px;
+    padding: 18px;
+    border-radius: 12px;
 }
 
-/* FINAL MESSAGE */
+.xbox strong {
+    color: var(--stitch-red);
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* FINAL QUOTE */
 .final {
     text-align: center;
     margin: 50px auto;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-style: italic;
     opacity: 0.95;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
     opacity: 0.8;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .card-content {
+        max-height: none;
+    }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
     <a href="index.html">← Back to Stadium</a>
     <span>⚾ End of Season Report</span>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
     <h1>FINAL INNING</h1>
-    <p>Eindreflectie van mijn I-Talent journey</p>
+    <p>Eindreflectie van mijn volledige I-Talent journey</p>
 </div>
 
 <!-- STATS -->
 <div class="stats">
+
     <div class="stat">
         <h2>Growth</h2>
         <p>Persoonlijke ontwikkeling</p>
@@ -159,75 +218,120 @@ footer {
 
     <div class="stat">
         <h2>Teamwork</h2>
-        <p>Sterk verbeterd</p>
+        <p>Samenwerken & communicatie</p>
     </div>
 
     <div class="stat">
-        <h2>XP</h2>
-        <p>Praktische ervaring</p>
+        <h2>Experience</h2>
+        <p>Praktische IT-ervaring</p>
     </div>
 
     <div class="stat">
         <h2>X-FACTOR</h2>
-        <p>In ontwikkeling</p>
+        <p>Blijvend in ontwikkeling</p>
     </div>
+
 </div>
 
-<!-- REFLECTIE -->
+<!-- REFLECTIE CARD -->
 <div class="card">
-    <h2>🧭 Eindreflectie</h2>
 
-    <p>
-        Doorheen mijn I-Talent traject heb ik mezelf beter leren kennen, zowel op professioneel als persoonlijk vlak.
-        Mijn sterktes zoals sociale vaardigheden en motivatie om bij te leren zijn verder ontwikkeld en concreter geworden.
-    </p>
-
-    <p>
-        Ik ben vooral gegroeid in samenwerken en het toepassen van kennis in praktijk. Activiteiten zoals de hackathon
-        en de studiereis naar Duitsland hebben mij geleerd om onder druk te werken, flexibel te zijn en breder te kijken
-        naar IT in een internationale context.
-    </p>
-
-    <p>
-        Mijn sterktes liggen vooral in communicatie, teamwork en leergierigheid. Tegelijk blijf ik werken aan het beter
-        toepassen van theorie in praktijk.
-    </p>
-
-    <h2>⚾ X-Factor</h2>
-
-    <div class="xfactor">
-        <div class="xbox">
-            <strong>Passie</strong>
-            <p>Interesse in technologie en blijven bijleren</p>
-        </div>
-
-        <div class="xbox">
-            <strong>Ondernemend</strong>
-            <p>Initiatief genomen tijdens hackathon en projecten</p>
-        </div>
-
-        <div class="xbox">
-            <strong>Teamplayer</strong>
-            <p>Sterk in samenwerking en communicatie</p>
-        </div>
-
-        <div class="xbox">
-            <strong>Internationaal</strong>
-            <p>Blik verruimd door Duitslandreis</p>
-        </div>
+    <div class="card-header">
+        <h2>⚾ FINAL REFLECTION REPORT</h2>
     </div>
 
-    <p style="margin-top:20px;">
-        De X-factor is voor mij geen eindpunt, maar een continu groeiproces waarin ik mezelf blijf ontwikkelen en verbeteren.
-    </p>
+    <div class="card-content">
+
+        <p>
+            In dit onderdeel neem je jouw eindreflectie op. Zijn jouw doelen bereikt? Wie ben je nu geworden?
+            Wat heb je bijgeleerd? Wat zijn jouw sterktes? Welke stappen ga ik verder ondernemen om mij blijvend
+            te ontwikkelen? In welke mate heb jij de X-Factor? Hoe zie jij je toekomst?
+        </p>
+
+        <p>
+            Doorheen mijn I-Talent traject heb ik mezelf beter leren kennen, zowel op professioneel als persoonlijk vlak.
+            In het begin van mijn opleiding had ik al een duidelijk beeld van mijn sterktes, zoals mijn sociale vaardigheden
+            en mijn motivatie om bij te leren. Toch merk ik dat deze competenties zich verder hebben ontwikkeld en concreter
+            zijn geworden door de verschillende activiteiten die ik heb uitgevoerd.
+        </p>
+
+        <p>
+            Mijn vooropgestelde doelen zijn deels bereikt. Ik ben gegroeid in het samenwerken met anderen en heb geleerd om
+            mijn kennis meer in de praktijk toe te passen. Activiteiten zoals de hackathon “Hack the Future” hebben mij geleerd
+            om onder tijdsdruk te werken en oplossingsgericht te denken. Daarnaast heeft de studiereis naar Duitsland mijn blik
+            verruimd, zowel cultureel als professioneel. Ik heb ervaren hoe IT internationaal wordt toegepast en hoe belangrijk
+            communicatie en flexibiliteit zijn in een internationale context.
+        </p>
+
+        <p>
+            Wat mij vooral opvalt, is dat mijn sterktes nog duidelijker naar voren zijn gekomen. Ik ben sociaal sterk en functioneer
+            goed in teamverband. Daarnaast ben ik gemotiveerd om nieuwe dingen te leren en uitdagingen aan te gaan. Tegelijk ben ik
+            mij ook bewuster geworden van mijn werkpunten. Zo blijft het toepassen van theoretische kennis in praktische situaties
+            een aandachtspunt, al heb ik hier wel al vooruitgang in geboekt.
+        </p>
+
+        <h2 style="margin-top:30px; color:var(--stitch-red); font-family:'Bebas Neue', cursive;">
+            ⚾ X-FACTOR ANALYSIS
+        </h2>
+
+        <div class="xfactor">
+
+            <div class="xbox">
+                <strong>(Em)Passie</strong>
+                Ik toon motivatie en interesse binnen mijn vakgebied en blijf actief bijleren via seminars en extra activiteiten.
+            </div>
+
+            <div class="xbox">
+                <strong>Ondernemend & Innovatief</strong>
+                Tijdens de hackathon nam ik initiatief en dacht ik actief mee aan creatieve oplossingen onder tijdsdruk.
+            </div>
+
+            <div class="xbox">
+                <strong>Samenwerken</strong>
+                Teamwork en communicatie zijn duidelijke sterktes geworden tijdens projecten, reizen en groepsactiviteiten.
+            </div>
+
+            <div class="xbox">
+                <strong>Internationaal</strong>
+                Dankzij de Duitslandreis en internationale contacten heb ik geleerd breder te kijken dan enkel mijn eigen omgeving.
+            </div>
+
+        </div>
+
+        <p>
+            Wanneer ik mijn ontwikkeling koppel aan de X-factor van PXL, zie ik dat ik op verschillende domeinen gegroeid ben.
+            Op vlak van (em)passie merk ik dat ik gemotiveerd ben en interesse toon in mijn vakgebied. Mijn deelname aan verschillende
+            seminars en extra activiteiten toont mijn engagement om bij te leren. Op het vlak van ondernemend en innovatief handelen
+            heb ik tijdens de hackathon initiatief genomen en actief meegedacht aan oplossingen. Samenwerken is een duidelijke sterkte
+            van mij, wat ook naar voren kwam tijdens groepsactiviteiten en projecten. Tot slot heb ik door de internationale reis en
+            contacten met anderen mijn blik verruimd en geleerd om over grenzen heen te kijken.
+        </p>
+
+        <p>
+            Naar de toekomst toe wil ik mij verder blijven ontwikkelen, zowel binnen IT als daarbuiten. Ik overweeg om nog een extra
+            diploma te behalen om meer variatie in mijn carrière te brengen. Daarnaast wil ik blijven werken aan mijn praktische
+            vaardigheden en mijn ambitie om later eventueel les te geven verder verkennen. Ook op persoonlijk vlak wil ik blijven
+            groeien, bijvoorbeeld door nieuwe vaardigheden zoals koken te leren en mijn sportieve doelen na te streven.
+        </p>
+
+        <p>
+            Ik kan concluderen dat ik dankzij I-Talent niet alleen gegroeid ben als student, maar ook als persoon.
+            Ik heb een beter beeld van wie ik ben, wat ik kan en waar ik nog naartoe wil werken.
+            De X-factor is voor mij geen eindpunt, maar een blijvend proces van ontwikkeling.
+        </p>
+
+    </div>
+
 </div>
 
+<!-- FINAL QUOTE -->
 <div class="final">
-    <p>⚾ “End of season, but not end of growth”</p>
+    <p>⚾ “End of season, but not the end of growth.”</p>
 </div>
 
+<!-- FOOTER -->
 <footer>
-    ⚾ ITalent Portfolio - Final Reflection Page
+    ⚾ ITalent Portfolio — Career Mode Complete
 </footer>
 
 </body>
